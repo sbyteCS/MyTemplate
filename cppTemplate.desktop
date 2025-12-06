@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.1.4
+Type=Application
+Name=cppTemplate
+Comment=Um template para testar codigo.
+Exec=./bin/cppTemplate
+Icon=icon_cppTemplate.png
+Terminal=true
+Categories=Development;
+
