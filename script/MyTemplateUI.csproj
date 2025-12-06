@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Eto.Forms" Version="2.10.2" />
+    <PackageReference Include="Eto.Platform.Gtk" Version="2.10.2" />
+    <PackageReference Include="GtkSharp" Version="3.24.24.95" />
+    <None Include="libheavyrender.so" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+</Project>

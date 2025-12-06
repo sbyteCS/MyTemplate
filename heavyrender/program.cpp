@@ -3,6 +3,8 @@
 using namespace std;
 extern "C" int main()
 {
-    cout << "Hello, World!" << endl;
+    int x = 0;
+    cout << x << " - " << "Hello, World!" << endl;
+
     return 0;
 }

@@ -1,25 +1,29 @@
 #!/bin/bash
 
-APPLICATION_NAME="libheavyrender.so"
+APPLICATION_NAME="heavyrender_app"      # executável final
+LIB_NAME="libheavyrender.so"            # biblioteca final
 
-# Diretórios
+# Diretórios do projeto
 SRC_CPP_DIR="heavyrender"
 ENUMS_DIR="heavyrender/enums"
 INTERFACES_DIR="heavyrender/interfaces"
 OBJ_DIR="obj"
-SRC_CS_DIR="src"
 INCLUDE_DIR="include"
 
-# Saída final (somente em script/lib)
-TARGET_SO="$LIB_DIR/$APPLICATION_NAME"
+# Destinos finais
+BIN_DIR="bin"
+SCRIPT_DIR="script"
+TARGET_SO="$SCRIPT_DIR/$LIB_NAME"
+TARGET_EXE="$BIN_DIR/$APPLICATION_NAME"
 
 # Log
 LOG_DIR="log"
 TIMESTAMP=$(date "+%Y%m%d_%H%M%S")
 LOG_FILE="$LOG_DIR/compile_$TIMESTAMP.log"
 
-mkdir -p "$OBJ_DIR" "$LIB_DIR" "$LOG_DIR"
+mkdir -p "$OBJ_DIR" "$BIN_DIR" "$SCRIPT_DIR" "$LOG_DIR"
 
+# Funções de log no formato solicitado
 log() {
     echo "[$(date "+%Y-%m-%d %H:%M:%S")] $1" | tee -a "$LOG_FILE"
 }
@@ -28,10 +32,11 @@ sep() {
     echo "--------------------------------------------------------------------------------" | tee -a "$LOG_FILE"
 }
 
+# ======= INÍCIO DO LOG =======
 log "============================= INICIANDO COMPILAÇÃO =============================="
 sep
-log "Projeto: $APPLICATION_NAME"
-log "Início da execução: $(date)"
+log "Projeto: $LIB_NAME"
+log "Biblioteca final: $TARGET_SO"
 log "Sistema operacional: $(uname -a)"
 log "Diretório atual: $(pwd)"
 log "Log salvo em: $LOG_FILE"
@@ -43,17 +48,14 @@ FAILED_COUNT=0
 
 START_TIME=$(date +%s)
 
-CPP_FILES=("$SRC_DIR"/*.cpp)
-if [ ! -e "${CPP_FILES[0]}" ]; then
-    log "Nenhum arquivo .cpp encontrado na pasta $SRC_DIR"
-    exit 1
-fi
+CPP_FILES=("$SRC_CPP_DIR"/*.cpp)
 
-log "Arquivos detectados na pasta $SRC_DIR:"
+log "Arquivos detectados na pasta $SRC_CPP_DIR:"
 for F in "${CPP_FILES[@]}"; do
     log " - $F"
 done
 sep
+
 log "Iniciando compilação individual dos arquivos..."
 sep
 
@@ -65,7 +67,12 @@ for FILE in "${CPP_FILES[@]}"; do
     log "Compilando: $FILE"
     log "Saída: $OBJ_FILE"
 
-    if g++ -fPIC -I"$INCLUDE_DIR" -I"$ENUMS_DIR" -I"$INTERFACES_DIR" -c "$FILE" -o "$OBJ_FILE" 2>>"$LOG_FILE"; then
+    if g++ -fPIC \
+        -I"$INCLUDE_DIR" \
+        -I"$ENUMS_DIR" \
+        -I"$INTERFACES_DIR" \
+        -c "$FILE" -o "$OBJ_FILE" 2>>"$LOG_FILE"; then
+        
         log "Status: SUCESSO"
         COMPILED_COUNT=$((COMPILED_COUNT + 1))
     else
@@ -93,7 +100,7 @@ if $COMPILATION_OK; then
         log "Biblioteca gerada com sucesso em:"
         log " -> $TARGET_SO"
     else
-        log "Erro durante a linkagem da biblioteca."
+        log "ERRO durante a linkagem da biblioteca."
         COMPILATION_OK=false
     fi
 
@@ -108,9 +115,11 @@ ELAPSED=$((END_TIME - START_TIME))
 
 log "Tempo total de execução: ${ELAPSED}s"
 log "Encerrado em: $(date)"
-
 sep
+
 log "============================= FIM DA COMPILAÇÃO ================================"
 echo
-echo "Compilação finalizada. Consulte o log detalhado em:"
-echo " -> $LOG_FILE"
+echo "Build concluído"
+echo "Biblioteca gerada: $TARGET_SO"
+echo "Executável (se habilitado depois): $TARGET_EXE"
+echo "Log salvo em: $LOG_FILE"

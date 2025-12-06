@@ -1,0 +1,32 @@
+[2025-12-06 16:45:55] ============================= INICIANDO COMPILAÇÃO ==============================
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:55] Projeto: libheavyrender.so
+[2025-12-06 16:45:55] Biblioteca final: script/libheavyrender.so
+[2025-12-06 16:45:55] Sistema operacional: Linux linuxdesktop 6.8.0-88-lowlatency #89.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 11 13:09:50 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+[2025-12-06 16:45:55] Diretório atual: /home/yapivam/ExperimentalSandbox/SDK_myTemplate_1.0.0.0v
+[2025-12-06 16:45:55] Log salvo em: log/compile_20251206_164555.log
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:55] Arquivos detectados na pasta heavyrender:
+[2025-12-06 16:45:55]  - heavyrender/program.cpp
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:55] Iniciando compilação individual dos arquivos...
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:55] Compilando: heavyrender/program.cpp
+[2025-12-06 16:45:55] Saída: obj/program.o
+[2025-12-06 16:45:56] Status: SUCESSO
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:56] Resumo da compilação:
+[2025-12-06 16:45:56]  - Arquivos compilados com sucesso: 1
+[2025-12-06 16:45:56]  - Arquivos com erro: 0
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:56] Iniciando linkagem final para gerar biblioteca...
+[2025-12-06 16:45:56] Saída prevista: script/libheavyrender.so
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:56] Linkagem final concluída.
+[2025-12-06 16:45:56] Biblioteca gerada com sucesso em:
+[2025-12-06 16:45:56]  -> script/libheavyrender.so
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:56] Tempo total de execução: 1s
+[2025-12-06 16:45:56] Encerrado em: sáb 06 dez 2025 16:45:56 -03
+--------------------------------------------------------------------------------
+[2025-12-06 16:45:56] ============================= FIM DA COMPILAÇÃO ================================

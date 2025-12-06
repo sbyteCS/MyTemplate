@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "wUoVjTY4P2k=",
+  "success": true,
+  "projectFilePath": "/home/yapivam/ExperimentalSandbox/SDK_myTemplate_1.0.0.0v/script/MyTemplateUI.csproj",
+  "expectedPackageFiles": [
+    "/home/yapivam/.nuget/packages/atksharp/3.24.24.95/atksharp.3.24.24.95.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/cairosharp/3.24.24.95/cairosharp.3.24.24.95.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/eto.forms/2.10.2/eto.forms.2.10.2.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/eto.platform.gtk/2.10.2/eto.platform.gtk.2.10.2.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/gdksharp/3.24.24.95/gdksharp.3.24.24.95.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/giosharp/3.24.24.95/giosharp.3.24.24.95.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/glibsharp/3.24.24.95/glibsharp.3.24.24.95.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/gtksharp/3.24.24.95/gtksharp.3.24.24.95.nupkg.sha512",
+    "/home/yapivam/.nuget/packages/pangosharp/3.24.24.95/pangosharp.3.24.24.95.nupkg.sha512"
+  ],
+  "logs": []
+}
